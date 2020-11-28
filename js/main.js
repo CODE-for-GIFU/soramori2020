@@ -21,20 +21,20 @@ function init() {
     Basic_Map[ 4 ] = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png', {
         attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
     });
-    Basic_Map[ 5 ] = L.tileLayer('http://{s}.tile.stamen.com/{variant}/{z}/{x}/{y}.png', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
-        variant: 'toner-background'
-    });
-    Basic_Map[ 6 ] = L.tileLayer('http://{s}.tile.stamen.com/{variant}/{z}/{x}/{y}.png', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
-        variant: 'toner-lite'
-    });
-    Basic_Map[ 7 ] = L.tileLayer('http://{s}.tile.stamen.com/{variant}/{z}/{x}/{y}.png', {
-        minZoom: 1,
-        maxZoom: 16,
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
-        variant: 'watercolor'
-    });
+    // Basic_Map[ 5 ] = L.tileLayer('http://{s}.tile.stamen.com/{variant}/{z}/{x}/{y}.png', {
+    //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
+    //     variant: 'toner-background'
+    // });
+    // Basic_Map[ 6 ] = L.tileLayer('http://{s}.tile.stamen.com/{variant}/{z}/{x}/{y}.png', {
+    //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
+    //     variant: 'toner-lite'
+    // });
+    // Basic_Map[ 7 ] = L.tileLayer('http://{s}.tile.stamen.com/{variant}/{z}/{x}/{y}.png', {
+    //     minZoom: 1,
+    //     maxZoom: 16,
+    //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ',
+    //     variant: 'watercolor'
+    // });
     Basic_Map[ 8 ] = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; <a href="http://www.esrij.com/"> Esri Japan </a>'
     });
@@ -44,7 +44,7 @@ function init() {
     });
     
     var map_104 = L.map('map_104').setView([35.65809922, 137.04135747], 9);
-    map_104.addLayer( Basic_Map[ 5 ] );
+    map_104.addLayer( Basic_Map[ 9 ] );
 
     var baseMap = {
         "OpenStreetMap": Basic_Map[ 0 ],
@@ -52,9 +52,9 @@ function init() {
         "国土地理院 淡色地図": Basic_Map[ 2 ],
         "国土地理院 写真": Basic_Map[ 3 ],
         "国土地理院 白地図": Basic_Map[ 4 ],
-        "Stamen Toner-Background": Basic_Map[ 5 ],
-        "Stamen Toner-Lite": Basic_Map[ 6 ],
-        "Stamen Watercolor": Basic_Map[ 7 ],
+        // "Stamen Toner-Background": Basic_Map[ 5 ],
+        // "Stamen Toner-Lite": Basic_Map[ 6 ],
+        // "Stamen Watercolor": Basic_Map[ 7 ],
         "Esri World Topo Map": Basic_Map[ 8 ],
         "Esri Ocean Base Map": Basic_Map[ 9 ],
     };
