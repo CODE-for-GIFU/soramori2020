@@ -44,7 +44,7 @@ function init() {
     });
     
     var map_104 = L.map('map_104').setView([35.65809922, 137.04135747], 9);
-    map_104.addLayer( Basic_Map[ 9 ] );
+    map_104.addLayer( Basic_Map[ 4 ] );
 
     var baseMap = {
         "OpenStreetMap": Basic_Map[ 0 ],
