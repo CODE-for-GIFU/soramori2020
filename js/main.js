@@ -4,6 +4,7 @@ jQuery(document).ready(function( $ ) {
 });
 
 function init() {
+    console.log("init start *****************");
     var Basic_Map = new Array();
     Basic_Map[ 0 ] = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -61,6 +62,21 @@ function init() {
     L.control.layers(baseMap).addTo(map_104);
 
 
+    //危険地域JSON
+    console.log("危険地域JSONの表示");
+    $.getJSON("../data/gifu_redzone.geojson", function(geojson){
+        console.log("getjson::::::::::::::");
+        var myStyle = {
+            "color": "#dd0000",
+            "weight": 1,
+            "opacity": 0.65
+        };
+        L.geoJSON(geojson,{
+                style:myStyle,
+                }).addTo(map_104);
+        L.getJSON
+    });
+
 
     //災害地点JSON
     let H30_URYO = "https://cfgifu.users.earthengine.app/view/gifu"
@@ -68,22 +84,19 @@ function init() {
     disastars = [
        {  "lat" : "36.37307755",  "lon" : "137.1800354",  "name" : "（国）３６０号",  "higai" : "土砂流出",  "img" : "image10.jpeg",  "geelink" : "",  },
        {  "lat" : "36.34132121",  "lon" : "137.1792141",  "name" : "コカ谷",  "higai" : "土砂流出",  "img" : "image15.png",  "geelink" : "",  },
-       {  "lat" : "36.09314497",  "lon" : "136.9354637",  "name" : "（国）１５６号",  "higai" : "土砂崩れ",  "img" : "image14.jpeg",  "geelink" : "H30_URYO",  },
+       {  "lat" : "36.09314497",  "lon" : "136.9354637",  "name" : "（国）１５６号",  "higai" : "土砂崩れ",  "img" : "image14.jpeg",  "geelink" : "https://code.earthengine.google.com/?scriptPath=users%2Fp3026042%2FCode4Gifu%3ARoute156",  },
        {  "lat" : "36.25800645",  "lon" : "137.1454502",  "name" : "宮川",  "higai" : "護岸決壊",  "img" : "image6.jpeg",  "geelink" : "",  },
        {  "lat" : "36.26934474",  "lon" : "137.3986111",  "name" : "（主）高山上宝線",  "higai" : "路側決壊",  "img" : "image7.jpeg",  "geelink" : "",  },
-       {  "lat" : "36.20031121",  "lon" : "137.2235634",  "name" : "瓜単川",  "higai" : "護岸決壊",  "img" : "image4.jpeg",  "geelink" : "H30_URYO",  },
+       {  "lat" : "36.20031121",  "lon" : "137.2235634",  "name" : "瓜単川",  "higai" : "護岸決壊",  "img" : "image4.jpeg",  "geelink" : "https://code.earthengine.google.com/?scriptPath=users%2Fp3026042%2FCode4Gifu%3AUrisugawa",  },
        {  "lat" : "36.13475673",  "lon" : "137.248567",  "name" : "苔川",  "higai" : "護岸決壊",  "img" : "image5.jpeg",  "geelink" : "",  },
-       {  "lat" : "36.12636137",  "lon" : "137.2470499",  "name" : "山王洞",  "higai" : "土砂崩れ",  "img" : "image11.jpeg",  "geelink" : "H30_URYO",  },
+       {  "lat" : "36.12636137",  "lon" : "137.2470499",  "name" : "山王洞",  "higai" : "土砂崩れ",  "img" : "image11.jpeg",  "geelink" : "https://code.earthengine.google.com/?scriptPath=users%2Fp3026042%2FCode4Gifu%3ASanoudo",  },
        {  "lat" : "35.98418789",  "lon" : "136.9797218",  "name" : "（一）惣則高鷲線",  "higai" : "舗装破損",  "img" : "image9.jpeg",  "geelink" : "",  },
        {  "lat" : "35.93646212",  "lon" : "136.8351072",  "name" : "（国）１５６号",  "higai" : "ブロック倒壊",  "img" : "image8.jpeg",  "geelink" : "",  },
        {  "lat" : "35.75123964",  "lon" : "137.0893633",  "name" : "和良川",  "higai" : "護岸決壊",  "img" : "image3.jpeg",  "geelink" : "",  },
-       {  "lat" : "35.90756888",  "lon" : "137.2070009",  "name" : "上呂地区",  "higai" : "土砂崩れ",  "img" : "image13.jpeg",  "geelink" : "H30_URYO",  },
-       {  "lat" : "35.73036532",  "lon" : "137.1993812",  "name" : "中原小学校裏",  "higai" : "土砂崩れ",  "img" : "image12.jpeg",  "geelink" : "H30_URYO",  },
+       {  "lat" : "35.90756888",  "lon" : "137.2070009",  "name" : "上呂地区",  "higai" : "土砂崩れ",  "img" : "image13.jpeg",  "geelink" : "https://heichinoda.users.earthengine.app/view/jouro",  },
+       {  "lat" : "35.73036532",  "lon" : "137.1993812",  "name" : "中原小学校裏",  "higai" : "土砂崩れ",  "img" : "image12.jpeg",  "geelink" : "https://code.earthengine.google.com/?scriptPath=users%2Fheichinoda%2FUDC%3APublish_Nakahara",  },
        {  "lat" : "35.64127875",  "lon" : "137.1583055",  "name" : "（主）関金山線",  "higai" : "路側決壊",  "img" : "image2.jpeg",  "geelink" : "",  },
    ];
-
-
-
 
     //ピン
     var pin = L.icon({
