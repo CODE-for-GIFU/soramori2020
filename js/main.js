@@ -68,7 +68,7 @@ function init() {
        {  "lat" : "36.09314497",  "lon" : "136.9354637",  "name" : "（国）１５６号",  "higai" : "土砂崩れ",  "img" : "image14.jpeg",  "geelink" : "https://cfgifu.users.earthengine.app/view/udc2020route156",  },
        {  "lat" : "36.25800645",  "lon" : "137.1454502",  "name" : "宮川",  "higai" : "護岸決壊",  "img" : "image6.jpeg",  "geelink" : "",  },
        {  "lat" : "36.26934474",  "lon" : "137.3986111",  "name" : "（主）高山上宝線",  "higai" : "路側決壊",  "img" : "image7.jpeg",  "geelink" : "",  },
-       {  "lat" : "36.20031121",  "lon" : "137.2235634",  "name" : "瓜単川",  "higai" : "護岸決壊",  "img" : "image4.jpeg",  "geelink" : "https://cfgifu.users.earthengine.app/view/udc2020urisugawa",  },
+       {  "lat" : "36.20031121",  "lon" : "137.2235634",  "name" : "瓜巣川",  "higai" : "護岸決壊",  "img" : "image4.jpeg",  "geelink" : "https://cfgifu.users.earthengine.app/view/udc2020urisugawa",  },
        {  "lat" : "36.13475673",  "lon" : "137.248567",  "name" : "苔川",  "higai" : "護岸決壊",  "img" : "image5.jpeg",  "geelink" : "",  },
        {  "lat" : "36.12636137",  "lon" : "137.2470499",  "name" : "山王洞",  "higai" : "土砂崩れ",  "img" : "image11.jpeg",  "geelink" : "https://cfgifu.users.earthengine.app/view/udc2020sanoudo",  },
        {  "lat" : "35.98418789",  "lon" : "136.9797218",  "name" : "（一）惣則高鷲線",  "higai" : "舗装破損",  "img" : "image9.jpeg",  "geelink" : "",  },
